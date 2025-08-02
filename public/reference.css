@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Rounded:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Outfit:wght@100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 120px;
+}
+
+/* Header Styles */
+.header {
+  padding: 48px 24px 32px;
+  background-color: #000000;
+}
+
+.app-title {
+  font-size: 32px; /* Reduced from 36px */
+  font-weight: 600; /* Reduced from 700 */
+  line-height: 1.1;
+  margin-bottom: 28px; /* Adjusted spacing */
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.greeting {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 32px; /* Increased spacing */
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.greeting-username {
+  background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+.profile-icon {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin-left: 18px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8B5CF6 0%, #4F46E5 100%); 
+  box-shadow: 0 2px 8px rgba(80,60,180,0.15);
+  border: 1px solid #fff;
+  position: relative;
+  padding: 3px;
+}
+
+
+.profile-icon::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 60%;
+  background: #fff; 
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+
+.streak-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.12);
+  padding: 6px 12px 6px 8px;
+  border-radius: 9999px; /* full pill */
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow:
+      0 6px 32px 0 rgba(80,60,180,0.10),
+      0 0 0 2px #2d225a33;
+  border: 1.5px solid #23213a;
+  backdrop-filter: blur(8px)
+}
+
+.fire-container {
+  font-size: 1.5em;
+  
+}
+
+/* Progress Ring */
+.progress-ring {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+.progress-ring svg {
+  transform: rotate(-90deg); /* start at top */
+}
+.ring-bg {
+  fill: none;
+  stroke: rgba(255,255,255,0.15);
+  stroke-width: 4;
+}
+.ring-progress {
+  fill: none;
+  stroke: #482991;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 62.8; /* circumference of r=10 */
+  stroke-dashoffset: calc(62.8 - (62.8 * var(--percent) / 100));
+  transition: stroke-dashoffset 0.4s ease;
+}
+
+.streak-text {
+  font-size: 20px;
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.progress-percentage{
+  font-size: 20px;
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  color: whitesmoke;
+  letter-spacing: 1px;
+}
+
+/* Main Content */
+
+/* Card header restructuring */
+
+.no-habits-container {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 30px;
+  border: 3px dashed rgba(50, 15, 226, 0.1);
+  border-radius: 20px;
+  color: #a89bca;
+}
+
+.no-habits-container h3 {
+  font-size: 20px;
+  font-weight: 650;
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.no-habits-container p {
+  font-size: 15px;
+  color: #9ca3af;
+  line-height: 1.5;
+  font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+.card-date {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  color: rgb(255, 255, 255);
+  font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 500;
+}
+
+
+.main-content {
+  flex: 1;
+  padding: 0 24px;
+}
+
+.habits-card {
+  padding: 28px 24px;
+  border-radius: 20px;
+  background-color: rgba(27, 17, 70, 0.18);
+  border-radius: 24px;
+  box-shadow: 0 4px 32px 0 rgba(62, 7, 228, 0.25);
+  backdrop-filter: blur(12px);
+  padding: 32px 28px 40px;
+  margin-top: 5px;
+  margin-bottom: 120px;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-right: auto;
+  font-weight: 660;
+  margin-bottom: 22px;
+  letter-spacing: -0.4px;
+  text-shadow: 0 1px 0 #fff8, 0 2px 8px #0001;
+  background: linear-gradient(90deg, #a89bca 0%, #3a2177 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Habit item pill */
+
+.habit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.habit-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: #0f0d1a;
+  border-radius: 16px;
+  border: 1px solid #1a1625;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.habit-item.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+
+.habit-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent-color, #8B5CF6);
+  transition: width 0.3s ease;
+}
+
+.habit-item:hover {
+  background: #141020;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border-color: #252030;
+}
+
+.habit-item:hover::before {
+  width: 6px;
+}
+
+/* Color variants */
+.habit-item[data-color="#ff0707"] { --accent-color: #ff0707; }
+.habit-item[data-color="#1d13b1"] { --accent-color: #1d13b1; }
+.habit-item[data-color="#59d221"] { --accent-color: #59d221; }
+.habit-item[data-color="#860d76"] { --accent-color: #860d76; }
+.habit-item[data-color="#0cbccf"] { --accent-color: #0cbccf; }
+.habit-item[data-color="#dbd513"] { --accent-color: #dbd513; }
+.habit-item[data-color="#ffffff"] { --accent-color: #ffffff; }
+
+/* Custom Checkbox */
+.checkbox-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.habit-checkbox {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.habit-checkbox:checked + .custom-checkbox {
+  background: var(--accent-color, #8B5CF6);
+  border-color: var(--accent-color, #8B5CF6);
+  transform: scale(1.05);
+}
+
+.custom-checkbox::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' xmlns='http://www.w3.org/2000/svg'%3e%3cpolyline points='20,6 9,17 4,12'%3e%3c/polyline%3e%3c/svg%3e");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.habit-checkbox:checked + .custom-checkbox::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Dark checkmark for light colors */
+.habit-item[data-color="#dbd513"] .custom-checkbox::after,
+.habit-item[data-color="#ffffff"] .custom-checkbox::after {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='4' xmlns='http://www.w3.org/2000/svg'%3e%3cpolyline points='20,6 9,17 4,12'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+/* Habit Content */
+.habit-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.habit-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  font-family: "Cal Sans", sans-serif;
+}
+
+.habit-text.completed  {
+  color: #888;
+  text-decoration: line-through;
+  transition: all 0.5s ease-in;
+  opacity: 0.7;
+}
+
+.habit-icon {
+  width: 26px;
+  height: 26px;
+  margin: 6px;
+  vertical-align: middle;
+}
+
+.habit-icon.completed {
+  color: #888;
+  transition: all 0.5s ease-in;
+  opacity: 0.7;
+}
+
+#frequencyText {
+  margin-left: 6px;
+}
+
+/* Time Display with dark purple outline */
+.habit-time {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+  background: #0a0812;
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid #2d1b69;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.habit-item.completed .habit-time {
+  color: #666;
+  background: #080610;
+  border-color: #1f1340;
+}
+
+/* Hover effects for checkbox */
+.habit-item:hover .custom-checkbox {
+  border-color: var(--accent-color, #8B5CF6);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Enhanced hover effects */
+.habit-item:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.habit-item:hover .habit-time {
+  background: #0d0a16;
+  border-color: #3d2580;
+}
+
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  overflow: hidden; /* contain indicator */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
+  padding: 0 16px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  z-index: 100;
+}
+
+.nav-container {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 8px;
+  box-shadow:
+      0 6px 32px 0 rgba(80,60,180,0.16),
+      0 0 0 2px #2d225a33;
+  border: 1.5px solid #23213a;
+  backdrop-filter: blur(8px);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.nav-item.active {
+  background: rgba(25, 3, 63, 1);
+  border: 1px solid rgba(74, 25, 158, 1);
+}
+
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  background: linear-gradient(90deg, #7841d6, #A855F7);
+  border-radius: 0 0 8px 8px;
+}
+
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+.nav-item:hover .nav-icon {
+  opacity: 0.8;
+  filter: grayscale(0.5);
+  transform: scale(1.1);
+}
+
+.nav-item.active .nav-icon {
+  opacity: 1;
+  filter: grayscale(0);
+  transform: scale(1.05);
+}
+
+.nav-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.2px;
+  transition: all 0.3s ease;
+  font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.nav-item:hover .nav-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-item.active .nav-label {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .app-container {
+      max-width: 100%;
+  }
+  
+  .header {
+      padding: 40px 20px 28px;
+  }
+  
+  .app-title {
+      font-size: 32px;
+  }
+  
+  .greeting {
+      font-size: 22px;
+  }
+  
+  .streak-text {
+      font-size: 16px;
+  }
+  
+  .main-content {
+      padding: 0 20px;
+  }
+  
+  .habits-card {
+      padding: 28px 24px;
+      border-radius: 20px;
+  }
+  
+  .card-title {
+      font-size: 20px;
+  }
+  
+  .habit-text {
+      font-size: 15px;
+      font-family: "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-weight:bold;
+  }
+  
+  .bottom-nav {
+      padding: 0 16px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .app-title {
+      font-size: 28px;
+  }
+  
+  .greeting {
+      font-size: 20px;
+  }
+  
+  .habit-text {
+      font-size: 14px;
+  }
+}

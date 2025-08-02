@@ -1,0 +1,296 @@
+/* =============================
+   Register Page Light Theme
+   ============================= */
+.register-container {
+    min-height: 100vh;
+    width: 100%; /* Changed from 100vw */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000; /* Changed to match dashboard body background */
+    padding: 20px; /* Added padding */
+    box-sizing: border-box; /* Added box-sizing */
+    max-width: 450px; /* Added to constrain width on desktop */
+    margin: 0 auto; /* Added to center the container */
+}
+
+html, body {
+    background-color: #000000 !important; /* Changed to match dashboard body background */
+    min-height: 100vh;
+    width: 100%; /* Changed from 100vw */
+    overflow-x: hidden;
+}
+
+
+.register-content {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(27, 17, 70, 0.18); /* Matched dashboard habits-card */
+    backdrop-filter: blur(12px); /* Matched dashboard habits-card */
+    border: none; /* Removed border to match dashboard habits-card */
+    border-radius: 24px; /* Matched dashboard habits-card */
+    padding: 32px 28px 40px; /* Matched dashboard habits-card */
+    box-shadow: 0 4px 32px 0 rgba(62, 7, 228, 0.25); /* Matched dashboard habits-card */
+}
+
+.register-content .login-title {
+    color: #ffffff;
+}
+
+
+.register-content .login-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px; /* Adjusted to match login page */
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.register-content .login-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    /* Removed margin-bottom to rely on parent gap */
+    font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+
+.register-content input.login-input {
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color: #ffffff !important;
+    font-size: 16px;
+    padding: 12px 0 8px 0;
+    font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: none !important;
+}
+
+
+
+.register-content .login-input:focus {
+    color: #ffffff;
+    outline: none;
+}
+
+
+
+.register-content .login-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.register-content .login-input-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0; /* Changed to match dashboard input-underline */
+    background: #6366f1; /* Changed to match dashboard input-underline */
+    transition: width 0.3s ease; /* Changed to match dashboard input-underline */
+    pointer-events: none;
+}
+
+
+.register-content .login-input-group.focused .login-input-underline,
+.register-content .login-input:focus + .login-input-underline {
+    width: 100%; /* Changed to match dashboard input-underline */
+}
+
+
+.register-content .login-input-group {
+    position: relative;
+}
+
+
+.register-content .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+
+.register-content .login-btn {
+    background: linear-gradient(to right, #2d1b69, #4c1d95); /* Matched dashboard save-btn */
+    color: #ffffff;
+    border: none;
+    padding: 18px 24px; /* Matched dashboard save-btn */
+    border-radius: 30px; /* Matched dashboard save-btn */
+    font-size: 16px;
+    font-weight: 700; /* Matched dashboard save-btn */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit; /* Matched dashboard save-btn */
+    letter-spacing: -0.2px; /* Matched dashboard save-btn */
+    box-shadow: 0 4px 20px rgba(45, 27, 105, 0.4); /* Matched dashboard save-btn */
+    width: 100%; /* Added to make button full-width */
+}
+
+
+.register-content .login-btn:hover {
+    background: linear-gradient(to right, #1e1338, #3c1361); /* Matched dashboard save-btn */
+    transform: translateY(-1px); /* Matched dashboard save-btn */
+    box-shadow: 0 6px 25px rgba(45, 27, 105, 0.5); /* Matched dashboard save-btn */
+}
+
+
+.register-content .signup-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+
+.register-content .signup-btn {
+    color: #a89bca; /* Matched dashboard no-habits-container h3 */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.2s ease;
+    font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+
+.register-content .signup-btn:hover {
+    color: #3a2177; /* Matched dashboard no-habits-container h3 */
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .register-container {
+        padding: 16px;
+    }
+    
+    .register-content {
+        padding: 36px 28px;
+    }
+    
+    .register-content .login-title {
+        font-size: 28px;
+    }
+    
+    .register-content .login-subtitle {
+        font-size: 15px;
+    }
+}
+
+/* --- FORCE OVERRIDE FOR REGISTER INPUTS --- */
+.register-content input.login-input {
+    background: transparent !important;
+    border: none !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    outline: none !important;
+    font-size: 16px !important;
+    padding: 12px 0 8px 0 !important;
+    font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    transition: all 0.3s ease !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+}
+
+.register-content input.login-input::placeholder {
+    color: rgba(255,255,255,0.5) !important;
+    opacity: 1 !important;
+}
+
+
+/* Base Toast Styling */
+.toast {
+    min-width: 250px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background: rgba(40, 40, 40, 0.9);
+    backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.3s ease-out forwards;
+    border-left: 4px solid #4CAF50; /* Default color, will be overridden by type */
+  }
+  
+  /* Toast Types */
+  .toast.success { border-left-color: #4CAF50; }
+  .toast.error { border-left-color: #F44336; }
+  .toast.warning { border-left-color: #FFC107; }
+  .toast.info { border-left-color: #2196F3; }
+  
+  /* Toast Icon */
+  .toast-icon {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Toast Message */
+  .toast-message {
+    flex: 1;
+    font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+  }
+  
+  /* Close Button */
+  .toast-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.288);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    margin-left: 8px;
+    font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+  }
+  
+  .toast-close:hover {
+    color: white;
+  }
+  
+  /* Animation */
+  @keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+  
+  /* Optional: Hover Effect */
+  .toast:hover {
+    transform: translateX(0) translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+
+
+  .register-content {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+
+        .register-content {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }

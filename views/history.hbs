@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit History</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/history.css">
+  <link rel="manifest" href="/manifest.json">
+
+</head>
+<body>
+  <div class="app-container" id="history-container">
+      <!-- Header Section -->
+      <header class="header">
+          <h1 class="history-title">Habit History</h1>
+      </header>
+
+      <!-- Main Content Area for Habit Graphs -->
+      <main class="habit-history-main-content">
+          
+
+            <div id="habit-history-graph-container">
+                   
+        </div>
+
+          <!-- Add more habit graph sections here as needed -->
+
+      </main>
+
+      <!-- Bottom Navigation (copied from dashboard.hbs, with History active) -->
+      <nav class="bottom-nav">
+          <div class="nav-container">
+              <a href="/" class="nav-item">
+                  <div class="nav-icon">🏠</div>
+                  <span class="nav-label">Home</span>
+              </a>
+              <a href="/habits" class="nav-item">
+                  <div class="nav-icon">📋</div>
+                  <span class="nav-label">Habits</span>
+              </a>
+              <a href="/history" class="nav-item active">
+                  <div class="nav-icon">📅</div>
+                  <span class="nav-label">History</span>
+              </a>
+              <a href="/profile" class="nav-item">
+                  <div class="nav-icon">⚙️</div>
+                  <span class="nav-label">Profile</span>
+              </a>
+
+              <!-- sliding underline indicator -->
+              <span class="nav-indicator"></span>
+          </div>
+      </nav>
+  </div>
+</body>
+    <script src="/script.js" defer></script>
+</html>

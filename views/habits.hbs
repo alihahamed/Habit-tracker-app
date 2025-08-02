@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new Habit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+
+</head>
+<div id="toast-container"></div>
+<body>
+    <div class="container">
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Title -->
+            <h1 class="title">Create new Habit</h1>
+        <form action="/auth/habits" method="post" id="habit-form">
+            <!-- Habit Name Input -->
+            <div class="input-section">
+                <input type="text" id="habitName" name="habitName" class="habit-input" placeholder="Habit Name">
+                <div class="input-underline"></div>
+            </div>
+
+            <!-- Frequency Section -->
+            <div class="frequency-section">
+                <h2 class="section-title">Frequency</h2>
+                <div class="frequency-buttons">
+                <input type="hidden" name="frequency" id="frequency" value="daily">
+                    <button class="frequency-btn active" data-frequency="daily" type="button" onclick='document.getElementById("frequency").value ="daily"'>Daily</button>
+                    <button class="frequency-btn" type="button" onclick='document.getElementById("frequency").value ="weekly"'>Weekly</button>
+                </div>
+            </div>
+
+            <!-- Color Section -->
+            <div class="color-section">
+                <h2 class="section-title">Color</h2>
+                <div class="color-picker">
+                    <input type="hidden" name="color" id="color" value="#ff0707">
+                    <button class="color-btn active" data-color="#ff0707" type="button" onclick='document.getElementById("color").value="#ff0707"' style="background-color: #ff0707;"></button>
+                    <button class="color-btn" data-color="#1d13b1" type="button" onclick='document.getElementById("color").value="#1d13b1"' style="background-color: #1d13b1;"></button>
+                    <button class="color-btn" data-color="#59d221" type="button" onclick='document.getElementById("color").value="#59d221"' style="background-color: #59d221;"></button>
+                    <button class="color-btn" data-color="#860d76" type="button" onclick='document.getElementById("color").value="#860d76"' style="background-color: #860d76;"></button>
+                    <button class="color-btn" data-color="#0cbccf" type="button" onclick='document.getElementById("color").value="#0cbccf"' style="background-color: #0cbccf;"></button>
+                    <button class="color-btn" data-color="#dbd513" type="button" onclick='document.getElementById("color").value="#dbd513"' style="background-color: #dbd513;"></button>
+                    <button class="color-btn" data-color="#ffffff" type="button" onclick='document.getElementById("color").value="#ffffff"' style="background-color: #ffffff"></button>
+                </div>
+            </div>
+
+            <!-- Icon Section -->
+            <div class="icon-section">
+                <h2 class="section-title">Icon</h2>
+                <div class="icon-picker">
+                    <input type="hidden" name="icon" id="icon" value="video-game.png">
+                    <button class="icon-btn active" data-icon="video-game.png" type="button"><img src="/icons/video-game.png" alt="Default"></button>
+                    <button class="icon-btn" data-icon="biceps.png" type="button"><img src="/icons/biceps.png" alt="biceps"></button>
+                    <button class="icon-btn" data-icon="brain.png" type="button"><img src="/icons/brain.png" alt="brain"></button>
+                    <button class="icon-btn" data-icon="work.png" type="button"><img src="/icons/work.png" alt="work"></button>
+                    <button class="icon-btn" data-icon="book.png" type="button"><img src="/icons/book.png" alt="book"></button>
+                    <button class="icon-btn" data-icon="tired.png" type="button"><img src="/icons/tired.png" alt="tired"></button>
+                    <button class="icon-btn" data-icon="guitar.png" type="button"><img src="/icons/guitar.png" alt="guitar"></button>
+                    <button class="icon-btn" data-icon="nerd.png" type="button"><img src="/icons/nerd.png" alt="nerd"></button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="cancel-btn" id="cancel-btn" type="button">Cancel</button>
+                <button class="save-btn" type="submit" id="saveHabit">Save Habit</button>
+            </div>
+         </form>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="nav-container">
+                <a href="/" class="nav-item">
+                    <div class="nav-icon">🏠</div>
+                    <span class="nav-label">Home</span>
+                </a>
+                <a href="/habits" class="nav-item active">
+                    <div class="nav-icon">📋</div>
+                    <span class="nav-label">Habits</span>
+                </a>
+                <a href="/history" class="nav-item">
+                    <div class="nav-icon">📅</div>
+                    <span class="nav-label">History</span>
+                </a>
+                <a href="/profile" class="nav-item">
+                    <div class="nav-icon">⚙️</div>
+                    <span class="nav-label">Profile</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <script src="/script.js" defer></script>
+</body>
+</html>

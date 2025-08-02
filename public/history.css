@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Rounded:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 120px;
+}
+
+/* Header Styles */
+.header {
+  padding: 48px 24px 32px;
+  background-color: #000000;
+}
+
+.history-title {
+  font-size: 32px;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 28px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* History Content */
+.habit-history-main-content {
+  flex: 1;
+  padding: 0 24px;
+}
+
+.habit-graph-section {
+  background: rgba(15, 13, 23, 0.9); /* Even darker, more subtle background */
+  box-shadow: 0 8px 32px rgba(80, 60, 180, 0.2), 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  padding: 24px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.habit-graph-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+}
+
+.habit-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.habit-info h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.habit-info .habit-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 2px;
+}
+
+.habit-name {
+  font-family: "Cal sans";
+  font-weight: 350px;
+  letter-spacing: 1px;
+}
+
+.contribution-grid-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* Custom Scrollbar Styles for Webkit Browsers */
+.contribution-grid-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.contribution-grid-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.contribution-grid-container::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 10px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.contribution-grid-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+.grid-labels-wrapper {
+  display: contents;
+}
+
+.empty-corner {
+  grid-column: 1;
+  grid-row: 1;
+  width: 20px;
+  height: 16px;
+}
+
+.day-labels {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 8px;
+  font-size: 10px; /* Smaller font size */
+  color: rgba(203, 213, 225, 0.7); /* More subtle color */
+  text-align: right;
+  font-weight: 500;
+}
+
+.day-labels span {
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(88, 28, 135, 0.3);
+  border-radius: 4px;
+  padding: 0 4px;
+  margin: 1px 0;
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(147, 51, 234, 0.1);
+}
+
+.grid-content-wrapper {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.month-labels {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Spread out to 12 columns for months */
+  gap: 3px; /* Match grid cell gap */
+  font-size: 10px;
+  color: rgba(203, 213, 225, 0.7);
+  margin-bottom: 8px;
+  font-weight: 500;
+  padding-left: 2px; /* Align with grid cells */
+}
+
+.month-labels span {
+  text-align: left;
+  padding: 4px 6px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  border: 1px solid rgba(88, 28, 135, 0.3);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(147, 51, 234, 0.1);
+}
+
+.contribution-grid {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  grid-auto-flow: column;
+  gap: 3px;
+  background: none; /* Removed background */
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.grid-cell {
+  width: 11px;
+  height: 11px;
+  background: rgba(71, 85, 105, 0.3); /* More transparent default cells */
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(100, 116, 139, 0.2);
+  cursor: pointer;
+  position: relative;
+}
+
+.grid-cell:hover {
+  transform: scale(1.2);
+  border-color: var(--habit-color, #3b82f6);
+  box-shadow: 0 0 8px var(--habit-color, #3b82f6);
+  z-index: 10;
+}
+
+.grid-cell.completed-day {
+  background: var(--habit-color, linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3), inset 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.grid-cell.completed-day:hover {
+  box-shadow: 0 0 12px #3b82f6;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  overflow: hidden;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
+  padding: 0 16px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  z-index: 100;
+}
+
+.nav-container {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 8px;
+  box-shadow: 0 6px 32px 0 rgba(80, 60, 180, 0.16), 0 0 0 2px #2d225a33;
+  border: 1.5px solid #23213a;
+  backdrop-filter: blur(8px);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.nav-item.active {
+  background: rgba(25, 3, 63, 1);
+  border: 1px solid rgba(74, 25, 158, 1);
+}
+
+.nav-item.active::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  background: linear-gradient(90deg, #7841d6, #a855f7);
+  border-radius: 0 0 8px 8px;
+}
+
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+.nav-item:hover .nav-icon {
+  opacity: 0.8;
+  filter: grayscale(0.5);
+  transform: scale(1.1);
+}
+
+.nav-item.active .nav-icon {
+  opacity: 1;
+  filter: grayscale(0);
+  transform: scale(1.05);
+}
+
+.nav-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.2px;
+  transition: all 0.3s ease;
+  font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.nav-item:hover .nav-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-item.active .nav-label {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .app-container {
+    max-width: 100%;
+  }
+
+  .header {
+    padding: 40px 20px 28px;
+  }
+
+  .history-title {
+    font-size: 28px;
+  }
+
+  .habit-history-main-content {
+    padding: 0 20px;
+  }
+
+  .habit-graph-section {
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .contribution-grid-container {
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .grid-cell {
+    width: 9px;
+    height: 9px;
+  }
+
+  .day-labels,
+  .month-labels {
+    font-size: 10px;
+  }
+
+  .bottom-nav {
+    padding: 0 16px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .history-title {
+    font-size: 24px;
+  }
+
+  .habit-info h4 {
+    font-size: 18px;
+  }
+
+  .grid-cell {
+    width: 8px;
+    height: 8px;
+  }
+
+  .day-labels,
+  .month-labels {
+    font-size: 9px;
+  }
+}
+
+.history-title,
+.habit-graph-section
+         {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+
+        .habit-graph-section {
+          animation-delay: 0.2s;
+        }
+
+        .history-title {
+          animation-delay: 0.1s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }

@@ -1,0 +1,366 @@
+{
+    "designSystem": {
+      "name": "Dark Mode Wellness App Design System",
+      "version": "1.0.0",
+      "description": "A comprehensive design system for dark-themed wellness and productivity applications",
+      
+      "colorPalette": {
+        "primary": {
+          "background": "#1a1a1a",
+          "surface": "#2a2a2a",
+          "surfaceElevated": "#3a3a3a",
+          "surfaceHighlight": "#4a4a4a"
+        },
+        "text": {
+          "primary": "#ffffff",
+          "secondary": "#b0b0b0",
+          "muted": "#808080",
+          "accent": "#ffffff"
+        },
+        "accent": {
+          "primary": "#ffffff",
+          "secondary": "#f0f0f0",
+          "tertiary": "#e0e0e0"
+        },
+        "status": {
+          "positive": "#4ade80",
+          "warning": "#fbbf24",
+          "neutral": "#94a3b8"
+        }
+      },
+      
+      "typography": {
+        "fontFamily": {
+          "primary": "system-ui, -apple-system, sans-serif",
+          "secondary": "ui-sans-serif, system-ui, sans-serif"
+        },
+        "fontSize": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.25rem",
+          "2xl": "1.5rem",
+          "3xl": "1.875rem",
+          "4xl": "2.25rem"
+        },
+        "fontWeight": {
+          "light": "300",
+          "normal": "400",
+          "medium": "500",
+          "semibold": "600",
+          "bold": "700"
+        },
+        "lineHeight": {
+          "tight": "1.25",
+          "normal": "1.5",
+          "relaxed": "1.75"
+        }
+      },
+      
+      "spacing": {
+        "xs": "0.25rem",
+        "sm": "0.5rem",
+        "md": "1rem",
+        "lg": "1.5rem",
+        "xl": "2rem",
+        "2xl": "3rem",
+        "3xl": "4rem"
+      },
+      
+      "borderRadius": {
+        "sm": "0.375rem",
+        "md": "0.5rem",
+        "lg": "0.75rem",
+        "xl": "1rem",
+        "2xl": "1.5rem",
+        "full": "9999px"
+      },
+      
+      "shadows": {
+        "sm": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        "md": "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+        "lg": "0 10px 15px -3px rgb(0 0 0 / 0.1)",
+        "inner": "inset 0 2px 4px 0 rgb(0 0 0 / 0.1)"
+      },
+      
+      "components": {
+        "cards": {
+          "primary": {
+            "backgroundColor": "surface",
+            "borderRadius": "xl",
+            "padding": "lg",
+            "border": "none",
+            "shadow": "none",
+            "textColor": "text.primary"
+          },
+          "elevated": {
+            "backgroundColor": "surfaceElevated",
+            "borderRadius": "xl",
+            "padding": "lg",
+            "border": "1px solid rgba(255, 255, 255, 0.1)",
+            "shadow": "md",
+            "textColor": "text.primary"
+          },
+          "quote": {
+            "backgroundColor": "surface",
+            "borderRadius": "xl",
+            "padding": "xl",
+            "border": "none",
+            "textAlign": "left",
+            "fontStyle": "normal",
+            "quoteMarks": false
+          }
+        },
+        
+        "buttons": {
+          "primary": {
+            "backgroundColor": "surface",
+            "color": "text.primary",
+            "borderRadius": "lg",
+            "padding": "md lg",
+            "border": "1px solid rgba(255, 255, 255, 0.2)",
+            "fontSize": "base",
+            "fontWeight": "medium",
+            "transition": "all 0.2s ease"
+          },
+          "ghost": {
+            "backgroundColor": "transparent",
+            "color": "text.secondary",
+            "borderRadius": "lg",
+            "padding": "sm md",
+            "border": "none",
+            "fontSize": "sm",
+            "fontWeight": "normal"
+          }
+        },
+        
+        "navigation": {
+          "tabBar": {
+            "backgroundColor": "surface",
+            "borderRadius": "xl",
+            "padding": "sm",
+            "position": "fixed",
+            "bottom": "lg",
+            "left": "lg",
+            "right": "lg",
+            "display": "flex",
+            "justifyContent": "space-around"
+          },
+          "tabItem": {
+            "padding": "sm",
+            "borderRadius": "md",
+            "display": "flex",
+            "flexDirection": "column",
+            "alignItems": "center",
+            "gap": "xs",
+            "minWidth": "60px"
+          }
+        },
+        
+        "charts": {
+          "lineChart": {
+            "backgroundColor": "transparent",
+            "strokeWidth": "2px",
+            "strokeColor": "text.primary",
+            "gridColor": "rgba(255, 255, 255, 0.1)",
+            "pointColor": "text.primary",
+            "pointSize": "4px"
+          },
+          "circularProgress": {
+            "backgroundColor": "surface",
+            "foregroundColor": "text.primary",
+            "strokeWidth": "8px",
+            "size": "120px",
+            "centerText": {
+              "fontSize": "3xl",
+              "fontWeight": "bold",
+              "color": "text.primary"
+            }
+          }
+        },
+        
+        "dataVisualization": {
+          "statsCard": {
+            "backgroundColor": "surface",
+            "borderRadius": "xl",
+            "padding": "lg",
+            "display": "flex",
+            "flexDirection": "column",
+            "gap": "md"
+          },
+          "metricDisplay": {
+            "primaryValue": {
+              "fontSize": "2xl",
+              "fontWeight": "bold",
+              "color": "text.primary"
+            },
+            "secondaryValue": {
+              "fontSize": "sm",
+              "color": "text.secondary"
+            },
+            "trend": {
+              "fontSize": "sm",
+              "fontWeight": "medium",
+              "color": "status.positive"
+            }
+          }
+        }
+      },
+      
+      "layouts": {
+        "mobileApp": {
+          "container": {
+            "maxWidth": "428px",
+            "margin": "0 auto",
+            "backgroundColor": "primary.background",
+            "minHeight": "100vh",
+            "padding": "md"
+          },
+          "header": {
+            "padding": "lg md",
+            "display": "flex",
+            "justifyContent": "space-between",
+            "alignItems": "center"
+          },
+          "content": {
+            "padding": "0 md",
+            "paddingBottom": "100px"
+          },
+          "grid": {
+            "display": "grid",
+            "gridTemplateColumns": "1fr 1fr",
+            "gap": "md",
+            "responsive": {
+              "single": "1fr",
+              "double": "1fr 1fr",
+              "triple": "1fr 1fr 1fr"
+            }
+          }
+        },
+        
+        "cardLayouts": {
+          "hero": {
+            "aspectRatio": "16:9",
+            "display": "flex",
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "textAlign": "center"
+          },
+          "dashboard": {
+            "display": "grid",
+            "gridTemplateColumns": "repeat(auto-fit, minmax(300px, 1fr))",
+            "gap": "lg"
+          },
+          "list": {
+            "display": "flex",
+            "flexDirection": "column",
+            "gap": "md"
+          }
+        }
+      },
+      
+      "patterns": {
+        "illustrations": {
+          "style": "minimalist line art",
+          "strokeWidth": "2px",
+          "strokeColor": "text.primary",
+          "fillColor": "none",
+          "backgroundColor": "transparent",
+          "size": "64px to 128px",
+          "placement": "center or top of cards"
+        },
+        
+        "iconography": {
+          "style": "outline/stroke-based",
+          "strokeWidth": "2px",
+          "size": "16px, 20px, 24px",
+          "color": "text.secondary",
+          "activeColor": "text.primary"
+        },
+        
+        "dataDisplay": {
+          "numbersStyle": "large, bold, centered",
+          "labelsStyle": "small, secondary color, below numbers",
+          "trendsStyle": "percentage with + or - prefix",
+          "chartStyle": "clean lines, minimal grid, dark background"
+        },
+        
+        "contentStructure": {
+          "headings": {
+            "hierarchy": "clear size distinction",
+            "weight": "medium to bold",
+            "color": "primary text color"
+          },
+          "body": {
+            "lineHeight": "relaxed",
+            "color": "secondary text color",
+            "fontSize": "base"
+          },
+          "quotes": {
+            "noQuotationMarks": true,
+            "attribution": "dash prefix, secondary color",
+            "fontStyle": "normal"
+          }
+        }
+      },
+      
+      "interactions": {
+        "hover": {
+          "cards": "subtle background lightening",
+          "buttons": "background color change",
+          "duration": "200ms ease"
+        },
+        "focus": {
+          "outline": "2px solid accent color",
+          "outlineOffset": "2px"
+        },
+        "transitions": {
+          "default": "all 0.2s ease",
+          "slow": "all 0.3s ease",
+          "fast": "all 0.1s ease"
+        }
+      },
+      
+      "accessibility": {
+        "contrast": {
+          "minimum": "4.5:1 for normal text",
+          "large": "3:1 for large text"
+        },
+        "focusIndicators": "visible and high contrast",
+        "touchTargets": "minimum 44px x 44px",
+        "semanticMarkup": "proper heading hierarchy and landmarks"
+      },
+      
+      "responsiveness": {
+        "breakpoints": {
+          "mobile": "0px",
+          "tablet": "768px",
+          "desktop": "1024px"
+        },
+        "scalingStrategy": "fluid typography and spacing",
+        "layoutAdaptation": "stack cards vertically on mobile"
+      }
+    },
+    
+    "implementationGuidelines": {
+      "codePatterns": {
+        "cssCustomProperties": "Use CSS custom properties for colors and spacing",
+        "responsiveDesign": "Mobile-first approach with progressive enhancement",
+        "darkModeOnly": "Designed specifically for dark theme, no light mode toggle needed"
+      },
+      
+      "recommendedFrameworks": {
+        "css": "Tailwind CSS with custom theme configuration",
+        "javascript": "React or Vue.js for component-based architecture",
+        "charts": "Chart.js or D3.js for data visualization"
+      },
+      
+      "performanceConsiderations": {
+        "images": "Use SVG for icons and illustrations",
+        "animations": "Use CSS transforms and opacity for smooth animations",
+        "loading": "Implement skeleton screens for better perceived performance"
+      }
+    }
+  }

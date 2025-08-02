@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Habit Tracker</title>
+    <!-- Base dark/light styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Light-theme overrides for register page -->
+    <link rel="stylesheet" href="/register.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<div id="toast-container"></div>
+<body>
+    <div class="register-container">
+        <div class="register-content">
+            <!-- Header -->
+            <div class="login-header">
+                <h1 class="login-title">Create Account</h1>
+                <p class="login-subtitle">Start building great habits today</p>
+            </div>
+
+            <!-- Register Form -->
+            <form class="login-form" id="register-form" method="post" action="/auth/register">
+                <!-- Username -->
+                <div class="login-input-group">
+                    <label class="login-label">Username</label>
+                    <input type="text" id="reg-username" class="login-input" name= "username" placeholder="Choose a username" required>
+                    <div class="login-input-underline"></div>
+                </div>
+
+                <!-- Email -->
+                <div class="login-input-group">
+                    <label class="login-label" >Email (optional)</label>
+                    <input type="email" id="reg-email" name="email" class="login-input" placeholder="Enter your email">
+                    <div class="login-input-underline"></div>
+                </div>
+
+                <!-- Password -->
+                <div class="login-input-group">
+                    <label class="login-label" >Password</label>
+                    <input type="password" id="reg-password" name="password" class="login-input" placeholder="Create a password" required>
+                    <div class="login-input-underline"></div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="login-input-group">
+                    <label class="login-label" >Confirm Password</label>
+                    <input type="password" id="reg-confirm" name="confirmPassword" class="login-input" placeholder="Confirm password" required>
+                    <div class="login-input-underline"></div>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit" class="login-btn">Sign Up</button>
+
+                <!-- Login Link -->
+                <div class="signup-link">
+                    <span class="signup-text">Already have an account? </span>
+                    <a href="/login" class="signup-btn">Log in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/script.js" defer></script>
+</body>
+</html>

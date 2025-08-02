@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/icons/sand-timer.png" type="image/png">
+    <link rel="manifest" href="/manifest.json">
+
+</head>
+<div id="toast-container"></div>
+<body>
+    <div class="app-container" id="dashboard-container">
+        <!-- Header Section -->
+        <header class="header input-section" style="animation-delay: 0.1s;">
+            <h1 class="app-title">Habit<br>Tracker <img src="/icons/sand-timer.png" alt="Lightbulb Icon" style="height: 32px; vertical-align: middle; margin-left: 8px;"></h1>
+            <h2 class="greeting"><span id="greeting-text"><span class="greeting-username"></span></span><span><img class="profile-icon icon" src="/icons/ghost.png" alt="profile"></span></h2>
+            <div class="streak-container">
+                <span class="fire-container"></span>
+                <span class="streak-text"></span>
+                <!-- Progress Ring -->
+                <span class="progress-ring" style="--percent:" aria-label="Streak progress">
+                    <svg width="24" height="24">
+                        <!-- background track -->
+                        <circle class="ring-bg" cx="12" cy="12" r="10" />
+                        <!-- progress path -->
+                        <circle class="ring-progress" cx="12" cy="12" r="10" />
+                    </svg>
+                </span>
+                <span class="progress-percentage"></span> <!-- New span for percentage -->
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="card-container">
+        <main class="main-content" id="main-content">
+            <div id="no-habits-message" class="no-habits-container" style="display: none;">
+                <h3>Time to build a new habit!</h3>
+                <p>Click the 'Habits' tab below to add your first one.</p>
+            </div>
+            <div class="habits-card frequency-section" id="habits-card" style="animation-delay: 0.2s;">
+                <div class="card-header">
+                    <h3 class="card-title">Today's Habits</h3>
+                    <span class="card-date">{{todayDate}}</span>
+            
+                </div>
+                <div class="habit-list" id="habit-list">
+                    </div>
+            </div>
+        </div>
+                
+        
+                    
+                
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="nav-container">
+                <a href="/" class="nav-item active">
+                    <div class="nav-icon">🏠</div>
+                    <span class="nav-label">Home</span>
+                </a>
+                <a href="/habits" class="nav-item">
+                    <div class="nav-icon">📋</div>
+                    <span class="nav-label">Habits</span>
+                </a>
+                <a href="/history" class="nav-item">
+                    <div class="nav-icon">📅</div>
+                    <span class="nav-label">History</span>
+                </a>
+                <a href="/profile" class="nav-item">
+                    <div class="nav-icon">⚙️</div>
+                    <span class="nav-label">Profile</span>
+                </a>
+
+                <!-- sliding underline indicator -->
+                <span class="nav-indicator"></span>
+            </div>
+        </nav>
+    </div>
+    <script src="/script.js" defer></script>
+</body>
+</html>
