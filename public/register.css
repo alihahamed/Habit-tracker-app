@@ -219,7 +219,8 @@ html, body {
     opacity: 0;
     transform: translateX(100%);
     animation: slideIn 0.3s ease-out forwards;
-    border-left: 4px solid #4CAF50; /* Default color, will be overridden by type */
+    border-left: 4px solid #4CAF50;
+    color:#252525 /* Default color, will be overridden by type */
   }
   
   /* Toast Types */
