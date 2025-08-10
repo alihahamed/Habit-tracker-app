@@ -8,29 +8,6 @@ const hbs = require("hbs")
 const session = require("express-session")
 const MySQLStore = require("express-mysql-session")(session)
 
-hbs.registerHelper('eq', function(a, b, options) {
-    if (arguments.length < 3) {
-      throw new Error('Handlebars Helper "eq" needs 2 parameters');
-    }
-    
-    if (a === b) {
-      return options.fn(this);  // Truthy: render block
-    }
-    return options.inverse ? options.inverse(this) : '';  // Falsy: render else (or empty)
-  });
-
-hbs.registerHelper('times', function(n, options) {
-  let result = '';
-  for (let i = 0; i < n; i++) {
-    result += options.fn(this, { data: { index: i } });
-  }
-  return result;
-});
-
-hbs.registerHelper('or', function() {
-  const args = Array.prototype.slice.call(arguments, 0, -1);
-  return args.some(Boolean);
-});
 
 dotenv.config({path: './.env'})
 
@@ -58,7 +35,7 @@ app.use(session({
   resave:false,
   saveUninitialized:false,
   cookie:{
-    maxAge: 1000 * 60 * 60 * 24 
+    maxAge: 120 * 24 * 60 * 60 * 1000
   }
 }))
 
