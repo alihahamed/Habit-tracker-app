@@ -2,7 +2,7 @@
 
 A modern Progressive Web App for tracking daily and weekly habits with streak counting and visual analytics.
 
-![Habit Tracker Demo](screenshot.png)
+![Habit Tracker Demo](https://github.com/user-attachments/assets/739d4f7b-2f4f-4fa4-8bf1-d2b3bf4e8aa2)
 
 ## ✨ Features
 
@@ -100,9 +100,9 @@ CREATE TABLE sessions (
 
 ## 📱 Screenshots
 
-| Dashboard | Create Habit | History |
+| Create Habit | History | Profile |
 |-----------|--------------|---------|
-| ![Dashboard](screenshots/dashboard.png) | ![Habits](screenshots/habits.png) | ![History](screenshots/history.png) |
+| ![Habits](https://github.com/user-attachments/assets/beb09393-3a86-4d73-adb5-a3aa61f770aa) | ![History](https://github.com/user-attachments/assets/4681f27c-deee-454f-be3b-e58311553b7e) | ![Profile](https://github.com/user-attachments/assets/7ab6f280-84d8-4a34-bc09-0faca646e7bf) |
 
 ## 🤝 Contributing
 
